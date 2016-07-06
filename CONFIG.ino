@@ -66,7 +66,7 @@ if (settingName == "SLEEP" && settingValue == "TRUE") {
   if (settingName == "SLEEP" && settingValue == "FALSE") {
     SLEEP = false;
   }
-  if (CONFIG && settingName == "INTERVAL") {
+  if (settingName == "INTERVAL") {
     interval = settingValue.toInt();
   }
   if (CONFIG && (settingName == "YEAR")) {
