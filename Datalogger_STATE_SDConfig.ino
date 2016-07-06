@@ -61,6 +61,7 @@ void loop() {
     case NEW:
       Serial.println("NEW");
       if (initSDCard()) {
+        count = 0;
         stage = LOG;
       } else {
         stage = WAIT;
