@@ -18,8 +18,10 @@ bool blinkState = false;
 String timestamp;
 int count = 0;
 int interval = 0;
+int polling_interval = 1000;
 bool CONFIG = false;
 bool SLEEP = false;
+unsigned long previousMillis = 0;
 
 int seconds = 0;
 int minutes = 29;
@@ -69,8 +71,9 @@ void loop() {
       break;
     case LOG:
       Serial.println("LOG");
-      if (count == 0) {
+      if (millis() - previousMillis > 10000) {
         logData();
+        previousMillis = millis();
       }
       if (SLEEP) {
         Serial.println("Sleep");
@@ -111,4 +114,3 @@ String getTimestamp() {
 void alarmMatch() {
   Serial.println("Awake!!");
 }
-

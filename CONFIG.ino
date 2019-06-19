@@ -25,13 +25,13 @@ void readSDSettings() {
       }
       if (character == ']') {
 
-          /*
-        //Debugging Printing
-        Serial.print("Name:");
-        Serial.println(settingName);
-        Serial.print("Value:");
-        Serial.println(settingValue);
-           */
+        /*
+          //Debugging Printing
+          Serial.print("Name:");
+          Serial.println(settingName);
+          Serial.print("Value:");
+          Serial.println(settingValue);
+        */
 
         // Apply the value to the parameter
         applySetting(settingName, settingValue);
@@ -60,7 +60,7 @@ void applySetting(String settingName, String settingValue) {
   if (settingName == "CONFIG" && settingValue == "FALSE") {
     CONFIG = false;
   }
-if (settingName == "SLEEP" && settingValue == "TRUE") {
+  if (settingName == "SLEEP" && settingValue == "TRUE") {
     SLEEP = true;
   }
   if (settingName == "SLEEP" && settingValue == "FALSE") {
@@ -69,6 +69,9 @@ if (settingName == "SLEEP" && settingValue == "TRUE") {
   if (settingName == "INTERVAL") {
     interval = settingValue.toInt();
   }
+  if (settingName == "POLLING_INTERVAL"){
+    polling_interval = settingValue.toInt();
+    }
   if (CONFIG && (settingName == "YEAR")) {
     rtc.setYear(settingValue.toInt());
   }
@@ -88,4 +91,3 @@ if (settingName == "SLEEP" && settingValue == "TRUE") {
     rtc.setSeconds(settingValue.toInt());
   }
 }
-

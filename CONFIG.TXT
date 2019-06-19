@@ -5,5 +5,4 @@
 [HOURS=13]
 [MINUTES=21]
 [SECONDS=0]
-[SLEEP=TRUE] // TRUE or FALSE
-[INTERVAL=4] // Awake every X minutes
+[POLLING_INTERVAL=10000] // milliseconds

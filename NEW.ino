@@ -19,10 +19,9 @@ bool initSDCard() { //inits SD Card, checks config file, open new file and inser
     logfile = SD.open(filename, FILE_WRITE);
 
     //Create header
-    logfile.println("timestamp,sensor1,sensor2,sensor3");
+    logfile.println("timestamp,sensor1");
     logfile.flush();
     success = true;
   }
   return success;
 }
-
