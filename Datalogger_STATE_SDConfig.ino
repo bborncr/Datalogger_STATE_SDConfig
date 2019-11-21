@@ -71,7 +71,7 @@ void loop() {
       break;
     case LOG:
       Serial.println("LOG");
-      if (millis() - previousMillis > 10000) {
+      if (millis() - previousMillis > polling_interval) {
         logData();
         previousMillis = millis();
       }
